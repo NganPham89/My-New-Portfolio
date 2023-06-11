@@ -38,7 +38,7 @@ const Contact = () => {
 
     const emailHandler = (event) => {
         const inputEmail = event.target.value.trim();
-        if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(inputEmail) || email !== "") {
+        if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(inputEmail) || email === "") {
             setEmailErr(false);
         } else {
             setEmailErr(true);
@@ -58,7 +58,7 @@ const Contact = () => {
     }
 
     const emptyFieldCheck = () => {
-        if (nameErr || emailErr || messageErr) {
+        if (!name || emailErr || !message) {
             return <button className="btn btn-warning" disabled={true}>Submit</button>;
         } else {
             return <button className="btn btn-info" onClick={handleSubmit}>Submit</button>;
@@ -101,7 +101,6 @@ const Contact = () => {
                 <br />
                 {messageErr ? <p>Please enter a short message (Minimum 10 characters required)</p> : null}
                 {emptyFieldCheck()}
-                {/* {submitBtn ? <button className="btn btn-info">Submit</button> : <button className="btn btn-warning" disabled={true}>Submit</button>} */}
             </form>
             <>
                 <Modal show={show} onHide={handleClose}>
