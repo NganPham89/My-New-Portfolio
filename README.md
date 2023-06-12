@@ -1,6 +1,28 @@
-# Getting Started with Create React App
+# My-New-Portfolio
+The latest version of my personal portfolio, built with React and Node.
+
+![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+
+A link to the site can be found [here](https://drive.google.com/file/d/1g9E9XEskw892D4jTHvWod0xJI46kedqt/view)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features
+
+- Built with Node and React, with stylizations from Bootstrap.
+- Showcasing my various works, including my projects, skills, and resume.
+- All components are rendered with React, including forms and validations.
+- Reponsive designs for all screen sizes.
+
+## Screenshot
+
+![main](./public/screenshots/site-main.jpg)
+
+![form](./public/screenshots/site-form.jpg)
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at Algarvian2001@yahoo.com. You can find more of my works at [NganPham89](https://github.com/NganPham89).
 
 ## Available Scripts
 
