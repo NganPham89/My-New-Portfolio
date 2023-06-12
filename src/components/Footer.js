@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 import LogoFB from "./assets/logo-fb.png";
 import LogoGH from "./assets/logo-gh.png";
 import LogoLI from "./assets/logo-li.png";
@@ -23,22 +24,21 @@ const contactObj = [
 
 const Footer = () => {
     return (
-        <div className="border border-2 border-secondary">
-            This is from Footer.
-            <div>
-                <ul>
+        <footer className="footer d-flex align-items-center justify-content-center mt-3">
+            <div className="">
+                <div className="ul-footer justify-content-center align-items-center d-flex">
                     {contactObj.map((contact) => {
                         return (
-                            <li>
+                            <div className="p-3">
                                 <a href={contact.url} target="_blank" rel="noreferrer">
                                     <img src={contact.icon} alt={contact.name} width={50}/>
                                 </a>
-                            </li>
+                            </div>
                         )
                     })}
-                </ul>
+                </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

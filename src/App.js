@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./App.css";
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -26,12 +27,8 @@ function App() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
-      <Header currentPage={currentPage} handlePageChange={handlePageChange}/>
-      {/* <About />
-      <Contact />
-      <Portfolio />
-      <Resume /> */}
+    <div className='body d-flex-col'>
+      <Header currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
       <Footer />
     </div>

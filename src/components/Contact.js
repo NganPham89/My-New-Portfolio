@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import "./Header.css";
 
 
 const Contact = () => {
@@ -59,48 +60,60 @@ const Contact = () => {
 
     const emptyFieldCheck = () => {
         if (!name || emailErr || !message) {
-            return <button className="btn btn-warning" disabled={true}>Submit</button>;
+            return <button className="button-inactive" disabled={true}>Submit</button>;
         } else {
-            return <button className="btn btn-info" onClick={handleSubmit}>Submit</button>;
+            return <button className="button-active" onClick={handleSubmit}>Submit</button>;
         }
     }
 
     return (
-        <div className="border border-2 border-danger">
-            This is from Contact.
-            <h2>Contact Me</h2>
-            <form>
-                <input
-                    type="text"
-                    placeholder="Enter Your Name"
-                    value={name}
-                    name="name"
-                    onChange={nameHandler}
-                    onFocus={nameHandler}
-                ></input>
-                {nameErr ? <p>Please enter your name (required)</p> : null}
-                <br />
-                <input
-                    type="email"
-                    placeholder="Enter Your Email"
-                    value={email}
-                    name="email"
-                    onChange={emailHandler}
-                    onFocus={emailHandler}
-                ></input>
-                {emailErr ? <p>Please enter a valid email (required)</p> : null}
-                <br />
-                <input
-                    type="text"
-                    placeholder="Type Your Message"
-                    value={message}
-                    name="text"
-                    onChange={messageHandler}
-                    onFocus={messageHandler}
-                ></input>
-                <br />
-                {messageErr ? <p>Please enter a short message (Minimum 10 characters required)</p> : null}
-                {emptyFieldCheck()}
+        <div className="post-body">
+            <h2 className="font-os font-pink d-flex justify-content-center m-4">Contact Me</h2>
+            <form className="d-flex-col justify-content-center">
+                <div className="d-flex justify-content-center p-2">
+                    <input
+                        type="text"
+                        placeholder="Enter Your Name"
+                        value={name}
+                        name="name"
+                        onChange={nameHandler}
+                        onFocus={nameHandler}
+                        className="px-2"
+                    ></input>
+                </div>
+                <div className="d-flex justify-content-center p-2">
+                    <input
+                        type="email"
+                        placeholder="Enter Your Email"
+                        value={email}
+                        name="email"
+                        onChange={emailHandler}
+                        onFocus={emailHandler}
+                        className="px-2"
+                    ></input>
+                </div>
+                <div className="d-flex justify-content-center p-2">
+                    <textarea
+                        type="text"
+                        placeholder="Type Your Message"
+                        value={message}
+                        name="text"
+                        onChange={messageHandler}
+                        onFocus={messageHandler}
+                        className="px-2 text-box"
+                    ></textarea>
+                </div>
+
+                <div className="d-flex justify-content-center p-3">
+                    {emptyFieldCheck()}
+
+                </div>
+
+                <div className="d-flex-col justify-content-center p-1">
+                    {nameErr ? <p className="d-flex justify-content-center p-1 font-os font-white">Please enter your name (required)</p> : null}
+                    {emailErr ? <p className="d-flex justify-content-center p-1 font-os font-white">Please enter a valid email (required)</p> : null}
+                    {messageErr ? <p className="d-flex justify-content-center p-1 font-os font-white">Please enter a short message (Minimum 10 characters required)</p> : null}
+                </div>
             </form>
             <>
                 <Modal show={show} onHide={handleClose}>

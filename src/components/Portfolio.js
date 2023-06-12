@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.css"
 
 import ImgSoccer from "./assets/project-soccer.png";
 import ImgHomeHub from "./assets/project-homehub.png";
@@ -34,18 +35,17 @@ const projects = [
 
 const Portfolio = () => {
     return (
-        <div className="border border-2 border-warning">
-            This is from Portfolio.
-            <h2>This is a collection of my most notable projects.</h2>
-            <div>
+        <div className="post-body d-flex-row">
+            <h2 className="font-os font-pink d-flex justify-content-center m-4">This is a collection of my most notable projects.</h2>
+            <div className="d-lg-flex justify-content-evenly">
                 {projects.map((project) => {
                     return (
-                        <div>
-                            <a href={project.github} target="_blank" rel="noreferrer">
-                                <h3>{project.name}</h3>
+                        <div className="d-flex-row mt-5 justify-content-center">
+                            <a href={project.github} target="_blank" rel="noreferrer" className="nav-active d-flex justify-content-center">
+                                <h3 className="font-os">{project.name}</h3>
                             </a>
-                            <a href={project.url} target="_blank" rel="noreferrer">
-                                <img src={project.img} alt={project.name} width={200} />
+                            <a href={project.url} target="_blank" rel="noreferrer" className="d-flex justify-content-center">
+                                <img src={project.img} alt={project.name} width={300} className="border-blue"/>
                             </a>
                         </div>
                     )
