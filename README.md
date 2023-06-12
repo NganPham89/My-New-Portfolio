@@ -3,7 +3,7 @@ The latest version of my personal portfolio, built with React and Node.
 
 ![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
-A link to the site can be found [here](https://drive.google.com/file/d/1g9E9XEskw892D4jTHvWod0xJI46kedqt/view)
+A link to the site can be found [here](https://nganpham89.github.io/my-new-portfolio/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
