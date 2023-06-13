@@ -45,7 +45,7 @@ const Portfolio = () => {
                                 <h3 className="font-os">{project.name}</h3>
                             </a>
                             <a href={project.url} target="_blank" rel="noreferrer" className="d-flex justify-content-center">
-                                <img src={project.img} alt={project.name} width={300} className="border-blue"/>
+                                <img src={project.img} alt={project.name} width={400} className="border-blue"/>
                             </a>
                         </div>
                     )

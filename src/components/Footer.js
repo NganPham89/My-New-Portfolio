@@ -29,7 +29,7 @@ const Footer = () => {
                 <div className="ul-footer justify-content-center align-items-center d-flex">
                     {contactObj.map((contact) => {
                         return (
-                            <div className="p-3">
+                            <div className="p-3 px-4">
                                 <a href={contact.url} target="_blank" rel="noreferrer">
                                     <img src={contact.icon} alt={contact.name} width={50}/>
                                 </a>
