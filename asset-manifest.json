@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/my-new-portfolio/static/css/main.518a877f.css",
-    "main.js": "/my-new-portfolio/static/js/main.419c229a.js",
+    "main.js": "/my-new-portfolio/static/js/main.5f87d6d1.js",
     "static/media/profile.jpg": "/my-new-portfolio/static/media/profile.f228a2ccb48a44687d8d.jpg",
     "static/media/project-soccer.png": "/my-new-portfolio/static/media/project-soccer.1cbe683067f2cbd1ccf7.png",
     "static/media/project-homehub.png": "/my-new-portfolio/static/media/project-homehub.19e642d44166c51e7861.png",
     "static/media/background-header.png": "/my-new-portfolio/static/media/background-header.8b3b0024f9d32b4f481e.png",
+    "static/media/project-event-manager.png": "/my-new-portfolio/static/media/project-event-manager.5beec26930ed68e88dc9.png",
     "static/media/project-blog.jpg": "/my-new-portfolio/static/media/project-blog.2bff730b5bc7fb641062.jpg",
     "static/media/project-CLI.jpg": "/my-new-portfolio/static/media/project-CLI.fda89699ce5bd7b02e58.jpg",
-    "static/media/project-wip.jpg": "/my-new-portfolio/static/media/project-wip.4d93d8a23fa942f51e92.jpg",
     "static/media/project-backend.jpg": "/my-new-portfolio/static/media/project-backend.df2735c78755ea679421.jpg",
     "index.html": "/my-new-portfolio/index.html",
     "main.518a877f.css.map": "/my-new-portfolio/static/css/main.518a877f.css.map",
-    "main.419c229a.js.map": "/my-new-portfolio/static/js/main.419c229a.js.map"
+    "main.5f87d6d1.js.map": "/my-new-portfolio/static/js/main.5f87d6d1.js.map"
   },
   "entrypoints": [
     "static/css/main.518a877f.css",
-    "static/js/main.419c229a.js"
+    "static/js/main.5f87d6d1.js"
   ]
 }
