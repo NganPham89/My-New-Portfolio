@@ -1,67 +1,123 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css"
 
 import ImgSoccer from "./assets/project-soccer.png";
 import ImgHomeHub from "./assets/project-homehub.png";
 import ImgBackend from "./assets/project-backend.jpg";
 import ImgBlog from "./assets/project-blog.jpg";
-import ImgWIP from "./assets/project-wip.jpg";
+// import ImgWIP from "./assets/project-wip.jpg";
 import ImgCLI from "./assets/project-CLI.jpg";
+import ImgJAAN from "./assets/project-event-manager.png";
 
 
-const projects = [
+const projectsList = [
     {
-        name: "Soccer Betting Minigame",
-        github: "https://github.com/NganPham89/Soccer-Betting-Mini-Game",
-        url: "https://nganpham89.github.io/Soccer-Betting-Mini-Game/",
-        img: ImgSoccer,
+        id: 1,
+        name: "JAAN Event Manager",
+        github: "https://github.com/JaminHLO/jaan-event-manager",
+        url: "https://sports-connect-e11a3bbe276b.herokuapp.com/",
+        img: ImgJAAN,
+        description: "A club and event management site where user can host, find, or join sporting events in their areas."
     },
     {
+        id: 2,
         name: "HomeHub",
         github: "https://github.com/Anabel-Espinoza/HomeHub",
         url: "https://home-hub-management.herokuapp.com/",
         img: ImgHomeHub,
+        description: "A home rental management system in which a homeowner has various tools to manage their properties and stay in touch with their tenants."
     },
     {
+        id: 3,
+        name: "Soccer Betting Minigame",
+        github: "https://github.com/NganPham89/Soccer-Betting-Mini-Game",
+        url: "https://nganpham89.github.io/Soccer-Betting-Mini-Game/",
+        img: ImgSoccer,
+        description: "A fun simple game where the user can bet against a soccer betting site of an upcoming soccer match."
+    },
+    {
+        id: 4,
         name: "Social Media Backend",
         github: "https://github.com/NganPham89/Social-Media-Backend",
         url: "https://drive.google.com/file/d/1g9E9XEskw892D4jTHvWod0xJI46kedqt/view",
         img: ImgBackend,
+        description: "A functional simple backend for a social media site, including functionalities such as making posts, adding friends, sharing thoughts."
     },
     {
+        id: 5,
         name: "Pokemon Blog",
         github: "https://github.com/NganPham89/Pokemon-Blog",
         url: "https://serene-savannah-81047.herokuapp.com/",
         img: ImgBlog,
+        description: "A simple blog site where the user can create posts about pokemon-related contents and sharing their thoughts with people of similar interests."
     },
     {
+        id: 6,
         name: "Employee Management System",
         github: "https://github.com/NganPham89/Employee-Info-Management",
         url: "https://drive.google.com/file/d/1y7oAtQ_GyohJ_CHBhxgDY1fetrudCTNS/view",
         img: ImgCLI,
-    },
-    {
-        name: "Work in Progress",
-        github: "Coming Soon",
-        url: "Coming Soon",
-        img: ImgWIP,
+        description: "A basic system where the user can manage employee roles, salaries, positions, etc."
     },
 ]
 
 const Portfolio = () => {
+
+    const [projects, setProjects] = useState(projectsList)
+
+    function toggleDisplay(event) {
+        const newProjectsList = []
+        for (let i = 0; i < projects.length; i++) {
+            if (projects[i].id === parseInt(event.target.id)) {
+
+                newProjectsList.push({ ...projects[i], display: true })
+            } else {
+                newProjectsList.push({ ...projects[i], display: false })
+            }
+        }
+        setProjects(newProjectsList);
+    }
+
     return (
         <div className="post-body d-flex-row">
             <h2 className="font-os font-pink d-flex justify-content-center m-4">This is a collection of my most notable projects.</h2>
             <div className="d-lg-flex justify-content-around flex-wrap">
                 {projects.map((project) => {
                     return (
-                        <div className="d-flex-row my-5 mx-3 justify-content-center">
-                            <a href={project.github} target="_blank" rel="noreferrer" className="nav-active d-flex justify-content-center">
-                                <h3 className="font-os">{project.name}</h3>
-                            </a>
-                            <a href={project.url} target="_blank" rel="noreferrer" className="d-flex justify-content-center">
-                                <img src={project.img} alt={project.name} width={450} height={300} className="border-blue"/>
-                            </a>
+                        <div key={project.img} className="d-flex-row my-5 mx-3 justify-content-center align-items-center">
+                            <div className="d-flex justify-content-center align-items-center">
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="nav-active"
+                                >
+                                    <h3
+                                        className="font-os"
+                                    >{project.name}</h3>
+                                </a>
+                                <div
+                                    id={project.id}
+                                    className="mx-3 font-pink font-medium"
+                                    onClick={event => toggleDisplay(event)}
+                                    value={project.id}
+                                >▼</div>
+                            </div>
+
+                            {project.display && 
+                            <div
+                                className="d-flex justify-content-center align-items-center"
+                                style={{width: "450px"}}
+                            >
+                                <p
+                                    className="font-white font-os mx-3 font-medium text-wrap"
+                                >{project.description}</p>
+                            </div>}
+                            <div className="d-flex justify-content-center align-items-center">
+                                <a href={project.url} target="_blank" rel="noreferrer">
+                                    <img src={project.img} alt={project.name} width={450} height={300} className="border-blue" />
+                                </a>
+                            </div>
                         </div>
                     )
                 })}

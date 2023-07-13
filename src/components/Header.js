@@ -3,18 +3,22 @@ import "./Header.css";
 
 const pages = [
     {
+        id: 1,
         name: "About",
         link: "#About"
     },
     {
+        id: 2,
         name: "Portfolio",
         link: "#Portfolio"
     },
     {
+        id: 3,
         name: "Resume",
         link: "#Resume"
     },
     {
+        id: 4,
         name: "Contact",
         link: "#Contact"
     },
@@ -31,7 +35,7 @@ const Header = ({ currentPage, handlePageChange }) => {
                 <div className="ul d-lg-flex align-items-center justify-content-end p-2 px-5">
                     {pages.map((page) => {
                         return (
-                            <div className="d-flex px-2 font-os px-3"><a href={page.link}
+                            <div key={page.id} className="d-flex px-2 font-os px-3"><a href={page.link}
                                 onClick={() => handlePageChange(page.name)}
                                 className={currentPage === page.name ? "nav-active" : "nav-inactive"}>{page.name}</a></div>
                         )
